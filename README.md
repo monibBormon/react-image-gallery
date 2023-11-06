@@ -1,8 +1,8 @@
 ## React Image Gallery
 
-###LiveLink: http://image-dnd-react.netlify.app/
+### LiveLink: http://image-dnd-react.netlify.app/
 
-###Features
+### Features
 
 - Drag And Drop
 - Multiple Image Upload
