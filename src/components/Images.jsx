@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { imgArr } from "../utils/constant";
 
 const Images = () => {
@@ -31,9 +31,6 @@ const Images = () => {
     }
   };
 
-  const dragImage = useRef(0);
-  const dragOverImage = useRef(0);
-
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData("text/plain", index.toString());
   };
@@ -53,15 +50,6 @@ const Images = () => {
       setImages(updatedImages);
     }
   };
-
-  //   Sort Function Drag And Drop
-  // const handleSortImage = () => {
-  //   const imageArrClone = [...images];
-  //   const temp = imageArrClone[dragImage.current];
-  //   imageArrClone[dragImage.current] = imageArrClone[dragOverImage.current];
-  //   imageArrClone[dragOverImage.current] = temp;
-  //   setImages(imageArrClone);
-  // };
 
   //   Upload Image function
   const addNewImage = () => {
