@@ -2,19 +2,18 @@ import React from "react";
 
 const SingleImage = ({
   item,
-  i,
-  dragImage,
-  dragOverImage,
+  index,
   handleSelectImage,
-  handleSortImage,
+  handleDragStart,
+  handleDragOver,
+  handleDrop,
 }) => {
   return (
     <div
       draggable
-      onDragStart={() => (dragImage.current = i)}
-      onDragEnter={() => (dragOverImage.current = i)}
-      onDragEnd={handleSortImage}
-      onDragOver={(e) => e.preventDefault()}
+      onDragStart={(e) => handleDragStart(e, index)}
+      onDragOver={(e) => handleDragOver(e, index)}
+      onDrop={(e) => handleDrop(e, index)}
       className={`relative overflow-hidden group rounded-[10px] first:col-span-2 first:row-span-2 ${
         item?.isSelect
           ? "after:absolute after:w-full after:h-full after:bg-slate-400 after:opacity-40 after:left-0 after:top-0"
